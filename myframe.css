@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+.upload-container {
+    margin-bottom: 20px;
+}
+
+#photoContainer {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+    border: 2px solid black;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.frame-selection {
+    margin-top: 20px;
+}
+
+.frame-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: #007bff;
+}
+
+.frame-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Classic Frame */
+.frame1 {
+    border: 10px solid brown;
+    border-radius: 0; /* Square shape */
+    padding: 10px;
+    width: 320px;
+    height: 320px;
+}
+
+/* Modern Frame (Circular) */
+.frame2 {
+    border: 10px solid gray;
+    border-radius: 50%; /* Circular shape */
+    padding: 10px;
+    width: 320px;
+    height: 320px;
+    clip-path: circle(50% at 50% 50%);
+}
+
+/* Fancy Frame with Animation (Hexagonal or custom shape) */
+.frame3 {
+    border: 10px solid transparent;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 5px 15px rgba(135, 206, 235, 1);
+    transition: all 1s ease-in-out;
+    animation: animateFrame 5s ease-in-out infinite;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /* Hexagon shape */
+    width: 320px;
+    height: 320px;
+}
+
+/* Define animation for fancy frame */
+@keyframes animateFrame {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 5px 15px rgba(135, 206, 235, 1);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 10px 30px rgba(70, 130, 180, 0.8);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 5px 15px rgba(135, 206, 235, 1);
+    }
+}
+
+/* Reset frame when no frame is selected */
+#photoContainer {
+    transition: border 0.5s ease;
+}

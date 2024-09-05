@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Frame Selector</title>
+    <link rel="stylesheet" href="myframe.css">
+</head>
+<body>
+    <h1>Choose a Photo Frame</h1>
+
+    <!-- Photo Upload Section -->
+    <div class="upload-container">
+        <input type="file" id="photoInput" accept="image/*">
+        <br><br>
+        <div id="photoContainer">
+            <img id="photo" src="" alt="Your uploaded image will appear here">
+        </div>
+    </div>
+
+    <!-- Frame Selection Section -->
+    <div class="frame-selection">
+        <h2>Select a Frame</h2>
+        <button class="frame-btn" onclick="applyFrame('frame1')">Classic</button>
+        <button class="frame-btn" onclick="applyFrame('frame2')">Modern</button>
+        <button class="frame-btn" onclick="applyFrame('frame3')">Blob</button>
+        <button class="frame-btn" onclick="removeFrame()">No Frame</button>
+    </div>
+
+    <script src="myframe.js"></script>
+</body>
+</html>
